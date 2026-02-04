@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Final Workshop PRIN INDACO - 19 Febbraio 2025, Università di Trieste">
+    <title>INDACO Final Workshop - 19 Febbraio 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header-subtitle {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a8d8ff;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            line-height: 1.3;
+        }
+
+        .event-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            font-size: 1.1em;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-item svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            padding: 50px 40px;
+            background: #f8f9fa;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            text-align: center;
+        }
+
+        .logo-placeholder {
+            width: 200px;
+            height: 120px;
+            background: white;
+            border: 3px dashed #ccc;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.85em;
+            text-align: center;
+            padding: 15px;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .logo-placeholder:hover {
+            border-color: #2a5298;
+            color: #2a5298;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(42, 82, 152, 0.2);
+        }
+
+        .logo-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-label {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .location-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .location-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .location-details {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .location-details p {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .location-details strong {
+            color: #2a5298;
+            min-width: 140px;
+        }
+
+        .map-button {
+            display: inline-block;
+            background: white;
+            color: #764ba2;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .map-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #1e3c72;
+            margin-bottom: 35px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #667eea;
+            display: inline-block;
+        }
+
+        .session {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .session-header {
+            font-size: 1.4em;
+            color: #2a5298;
+            margin-bottom: 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .session-icon {
+            background: #667eea;
+            color: white;
+            width: 50px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+
+        .talk {
+            background: white;
+            padding: 25px;
+            margin-bottom: 18px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .talk:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+            border-left-color: #2a5298;
+        }
+
+        .talk:last-child {
+            margin-bottom: 0;
+        }
+
+        .talk-header {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .time {
+            display: inline-flex;
+            align-items: center;
+            background: #667eea;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.95em;
+        }
+
+        .duration {
+            display: inline-flex;
+            align-items: center;
+            background: #e9ecef;
+            color: #666;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .speaker {
+            font-weight: 700;
+            color: #1e3c72;
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        .title {
+            color: #555;
+            margin-top: 10px;
+            font-style: italic;
+            line-height: 1.6;
+            padding-left: 15px;
+            border-left: 3px solid #e9ecef;
+        }
+
+        .special-note {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 12px 18px;
+            margin-top: 12px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #856404;
+        }
+
+        .break {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-left-color: #fdcb6e;
+            text-align: center;
+            font-weight: 700;
+            color: #2d3436;
+            padding: 20px;
+        }
+
+        .break .time {
+            background: #d63031;
+            font-size: 1em;
+        }
+
+        .banner-section {
+            background: #f8f9fa;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .banner-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .banner-placeholder {
+            width: 100%;
+            max-width: 1000px;
+            height: 200px;
+            margin: 0 auto;
+            background: white;
+            border: 3px dashed #ccc;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            padding: 20px;
+        }
+
+        .banner-placeholder:hover {
+            border-color: #2a5298;
+            color: #2a5298;
+        }
+
+        .banner-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .info-section {
+            text-align: center;
+            padding: 50px 40px;
+            background: #f8f9fa;
+        }
+
+        .info-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .info-box h3 {
+            font-size: 1.8em;
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+
+        .info-box p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .info-box .highlight {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.95em;
+        }
+
+        footer a {
+            color: #a8d8ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .header-subtitle {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .event-info {
+                gap: 20px;
+                font-size: 1em;
+            }
+
+            .logos {
+                padding: 30px 20px;
+                gap: 30px;
+            }
+
+            .logo-placeholder {
+                width: 150px;
+                height: 90px;
+            }
+
+            .session {
+                padding: 20px;
+            }
+
+            .talk {
+                padding: 18px;
+            }
+
+            .section-title {
+                font-size: 1.6em;
+            }
+
+            .location-section {
+                padding: 25px 20px;
+            }
+
+            .banner-section {
+                padding: 40px 20px;
+            }
+
+            .banner-placeholder {
+                height: 150px;
+            }
+
+            .talk-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .info-section {
+                padding: 30px 20px;
+            }
+
+            .info-box {
+                padding: 25px;
+            }
+
+            .info-box h3 {
+                font-size: 1.4em;
+            }
+
+            .info-box p {
+                font-size: 1.1em;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .session {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-subtitle">PRIN INDACO - Final Workshop</div>
+            <h1>The INDACO project: statistics and machine learning<br>from life-style factors to cancer prediction</h1>
+            <div class="event-info">
+                <div class="info-item">
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>19 Febbraio 2025</span>
+                </div>
+                <div class="info-item">
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Trieste, DEAMS - Aula 4B</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Loghi Università -->
+        <div class="logos">
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <!-- Sostituire con: <img src="images/logo-trieste.png" alt="Logo Università di Trieste"> -->
+                    Logo Università 1
+                </div>
+                <div class="logo-label">Università di Trieste</div>
+            </div>
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <!-- Sostituire con: <img src="images/logo-milano.png" alt="Logo Università di Milano"> -->
+                    Logo Università 2
+                </div>
+                <div class="logo-label">Università di Milano</div>
+            </div>
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <!-- Sostituire con: <img src="images/logo-torino.png" alt="Logo Università di Torino"> -->
+                    Logo Università 3
+                </div>
+                <div class="logo-label">Università di Torino</div>
+            </div>
+        </div>
+
+        <!-- Location -->
+        <div class="content">
+            <div class="location-section">
+                <div class="location-title">Sede dell'Evento</div>
+                <div class="location-details">
+                    <p><strong>Luogo:</strong> DEAMS - Università degli Studi di Trieste</p>
+                    <p><strong>Aula:</strong> 4B (Edificio D)</p>
+                    <p><strong>Indirizzo:</strong> Via Università, 1 - 34123 Trieste</p>
+                    <p><strong>Data:</strong> Mercoledì, 19 Febbraio 2025</p>
+                    <p><strong>Partecipazione:</strong> Libera</p>
+                </div>
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="https://maps.google.com/?q=DEAMS+Università+degli+Studi+di+Trieste+Edificio+D,+Via+Università+1,+34123+Trieste" target="_blank" class="map-button">Visualizza sulla Mappa</a>
+                </div>
+            </div>
+
+            <!-- Programma -->
+            <h2 class="section-title">Programma della Giornata</h2>
+
+            <!-- Sessione Mattina -->
+            <div class="session">
+                <div class="session-header">
+                    <span class="session-icon">AM</span>
+                    Sessione Mattutina
+                </div>
+
+                <div class="talk">
+                    <div class="talk-header">
+                        <span class="time">11:00 - 11:10</span>
+                        <span class="duration">10 minuti</span>
+                    </div>
+                    <div class="speaker">Saluti istituzionali - Silvia Franceschi</div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-header">
+                        <span class="time">11:10 - 11:25</span>
+                        <span class="duration">15 minuti</span>
+                    </div>
+                    <div class="speaker">Valeria Edefonti / Maria Parpinel / Francesco Pauli</div>
+                    <div class="title">INDACO: background, obiettivi e risultati preliminari</div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-header">
+                        <span class="time">11:25 - 11:45</span>
+                        <span class="duration">20 minuti</span>
+                    </div>
+                    <div class="speaker">Monica Ferraroni</div>
+                    <div class="title">Stato dell'arte sulla relazione tra fattori life-style e tumori</div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-header">
+                        <span class="time">11:45 - 12:05</span>
+                        <span class="duration">20 minuti</span>
+                    </div>
+                    <div class="speaker">Arianna Manuela Natali</div>
+                    <div class="title">Dipendenza trasversale sui dipendenti delle università di Milano</div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-header">
+                        <span class="time">12:05 - 12:25</span>
+                        <span class="duration">20 minuti</span>
+                    </div>
+                    <div class="speaker">Jerry Polesel / Luigino Dal Maso</div>
+                    <div class="title">Dati epidemiologici sui tumori del tratto testa-collo</div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-header">
+                        <span class="time">12:25 - 12:45</span>
+                        <span class="duration">20 minuti</span>
+                    </div>
+                    <div class="speaker">Edoardo Insaghi</div>
+                </div>
+
+                <div class="talk break">
+                    <div class="talk-header">
+                        <span class="time">12:45 - 14:30</span>
+                        <span class="duration">1h 45min</span>
+                    </div>
+                    <div class="speaker">PAUSA PRANZO</div>
+                </div>
+            </div>
+
+            <!-- Sessione Pomeriggio -->
+            <div class="session">
+                <div class="session-header">
+                    <span class="session-icon">PM</span>
+                    Sessione Pomeridiana
+                </div>
+
+                <div class="talk">
+                    <div class="talk-header">
+                        <span class="time">14:30 - 14:50</span>
+                        <span class="duration">20 minuti</span>
+                    </div>
+                    <div class="speaker">Livio Finos</div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-header">
+                        <span class="time">14:50 - 15:20</span>
+                        <span class="duration">30 minuti</span>
+                    </div>
+                    <div class="speaker">Lea Anna Cozzuoli</div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-header">
+                        <span class="time">15:20 - 15:35</span>
+                        <span class="duration">15 minuti</span>
+                    </div>
+                    <div class="speaker">Pausa</div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-header">
+                        <span class="time">15:35 - 15:55</span>
+                        <span class="duration">20 minuti</span>
+                    </div>
+                    <div class="speaker">Paola Berchialla</div>
+                    <div class="special-note">SISMEC - Riconoscimento di immagini</div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-header">
+                        <span class="time">15:55 - 16:15</span>
+                        <span class="duration">20 minuti</span>
+                    </div>
+                    <div class="speaker">Federica Fiori</div>
+                    <div class="title">Riconoscimento di ingredienti e stima dei nutrienti a partire da fotografie di cibo</div>
+                </div>
+
+                <div class="talk">
+                    <div class="talk-header">
+                        <span class="time">16:15 - 16:35</span>
+                        <span class="duration">20 minuti</span>
+                    </div>
+                    <div class="speaker">Sergio Coluccia / Alex Falcon</div>
+                    <div class="title">Statistica ed Informatica in interazione nell'analisi alimentare</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Partecipazione -->
+        <div class="info-section">
+            <div class="info-box">
+                <h3>Informazioni</h3>
+                <p>La partecipazione all'evento è <span class="highlight">libera e aperta a tutti</span>.<br>
+                Vi aspettiamo numerosi per questa importante giornata di condivisione scientifica.</p>
+            </div>
+        </div>
+
+        <!-- Banner Progetto -->
+        <div class="banner-section">
+            <h2 class="banner-title">Progetto PRIN INDACO</h2>
+            <div class="banner-placeholder">
+                <!-- Sostituire con: <img src="images/banner-indaco.png" alt="Banner INDACO Project"> -->
+                Banner del Progetto INDACO
+                <br><small>(Sostituire con file immagine del banner)</small>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p><strong>PRIN INDACO</strong> - The INDACO project: statistics and machine learning from life-style factors to cancer prediction</p>
+            <p style="margin-top: 15px;">© 2025 - Università di Trieste · Università di Milano · Università di Torino</p>
+        </footer>
+    </div>
+</body>
+</html>
